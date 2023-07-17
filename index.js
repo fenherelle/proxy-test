@@ -16,11 +16,14 @@ app.listen(PORT, () => {
     console.log(`Express listening on port ${PORT}`)
 })
 
-app.get("/dostuff", cors(corsOptions), async function (req, res) {
+app.post("/dostuff", cors(corsOptions), async function (req, res) {
+
+    const name = req.body.name;
+    const email = req.body.email;
 
     axios.post('http://45.236.128.157/mailingsystem', {
-        name: 'MP',
-        email: 'mpcarrascoojeda@gmail.com'
+        name: name,
+        email: email
       })
       .then(function (response) {
         console.log(response);
