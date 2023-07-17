@@ -16,7 +16,7 @@ app.listen(PORT, () => {
     console.log(`Express listening on port ${PORT}`)
 })
 
-app.get("/", cors(corsOptions), async function (req, res) {
+app.get("/dostuff", cors(corsOptions), async function (req, res) {
 
     axios.post('http://45.236.128.157/mailingsystem', {
         name: 'MP',
